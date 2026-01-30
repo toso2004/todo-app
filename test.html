@@ -1,0 +1,57 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="testStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="todo">
+            <h2>To Do List</h2>
+            <div class="row1">
+                <input id="inputBox" placeholder="Add Event">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!--<li>Task 1</li>-->
+            <!--</ul>
+        </div> 
+    </div>
+
+    <script>
+        //need Add button to work
+        //need a list to me made when add button is pressed
+        //create variables for Add and List
+        const inputBox = document.getElementById("inputBox");
+        const listContainer = document.getElementById("list-container");
+
+        //creates functions that will give the above variables functionalities
+        function addTask(){            
+            // check if inputbox is empty if it is not empty add items to the list and display them
+            if(inputBox.value === ''){
+                alert("Please enter a task");
+            }
+            else{
+                //create a variable that will contain the items in the list
+                let li = document.createElement("li");
+                li.innerHTML = inputBox.value;
+                listContainer.appendChild(li);
+                saveData();
+            }
+            inputBox.value = '';
+            saveData();
+        }
+
+        function saveData(){
+            localStorage.setItem("data", listContainer.innerHTML);
+        }
+
+        function showTask(){
+            listContainer.innerHTML = localStorage.getItem("data");
+        }
+        showTask();
+    </script>
+</body>
+</html>-->
